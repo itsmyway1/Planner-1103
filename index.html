@@ -12,7 +12,7 @@
 
     <style>
       /* -------------------------------------------------------------
-         Apple.com Aesthetic System (Design Constitution & Tokens)
+         Apple Monochrome Design System (Pure Black & Grayscale)
          ------------------------------------------------------------- */
       *, *::before, *::after {
         box-sizing: border-box;
@@ -21,36 +21,43 @@
       }
 
       :root {
-        /* Apple Palette */
-        --apple-canvas: #f5f5f7;
-        --apple-card: #ffffff;
-        --apple-card-hover: #fafafc;
-        --apple-text-primary: #1d1d1f;
-        --apple-text-secondary: #86868b;
-        --apple-text-tertiary: #a1a1a6;
-        
-        --apple-blue: #0071e3;
-        --apple-blue-hover: #0077ed;
-        --apple-blue-active: #0062c4;
-        --apple-blue-tint: rgba(0, 113, 227, 0.08);
+        /* Monochrome Canvas & Surfaces */
+        --mono-canvas: #f5f5f7;
+        --mono-card: #ffffff;
+        --mono-card-hover: #fafafc;
 
-        --apple-red: #ff3b30;
-        --apple-red-tint: rgba(255, 59, 48, 0.08);
-        --apple-orange: #ff9500;
-        --apple-orange-tint: rgba(255, 149, 0, 0.1);
-        --apple-green: #34c759;
-        --apple-green-tint: rgba(52, 199, 89, 0.1);
+        /* Typography Greyscale Hierarchy */
+        --mono-black: #000000;
+        --mono-900: #1d1d1f;
+        --mono-800: #3a3a3c;
+        --mono-700: #48484a;
+        --mono-600: #6e6e73;
+        --mono-500: #86868b;
+        --mono-400: #aeaeb2;
+        --mono-300: #c7c7cc;
+        --mono-200: #d1d1d6;
+        --mono-100: #e8e8ed;
+        --mono-50: #f2f2f7;
 
-        --apple-border: rgba(0, 0, 0, 0.08);
-        --apple-border-subtle: rgba(0, 0, 0, 0.05);
-        --apple-hairline: rgba(0, 0, 0, 0.06);
+        /* Pure Black Point Accents */
+        --mono-accent: #000000;
+        --mono-accent-hover: #2c2c2e;
+        --mono-accent-active: #1c1c1e;
+        --mono-accent-tint: rgba(0, 0, 0, 0.06);
 
-        --apple-shadow-ambient: 0 4px 20px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
-        --apple-shadow-elevated: 0 12px 32px rgba(0, 0, 0, 0.07), 0 2px 6px rgba(0, 0, 0, 0.03);
+        /* Borders & Dividers */
+        --mono-border: rgba(0, 0, 0, 0.1);
+        --mono-border-subtle: rgba(0, 0, 0, 0.06);
+        --mono-hairline: rgba(0, 0, 0, 0.05);
 
-        --apple-radius-card: 20px;
-        --apple-radius-control: 12px;
-        --apple-radius-pill: 980px;
+        /* Shadows */
+        --mono-shadow-ambient: 0 4px 20px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+        --mono-shadow-elevated: 0 12px 32px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+
+        /* Radii */
+        --mono-radius-card: 20px;
+        --mono-radius-control: 12px;
+        --mono-radius-pill: 980px;
 
         --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);
         --ease-apple-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -58,8 +65,8 @@
 
       body {
         font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Pretendard", "Apple SD Gothic Neo", "Segoe UI", Roboto, sans-serif;
-        background-color: var(--apple-canvas);
-        color: var(--apple-text-primary);
+        background-color: var(--mono-canvas);
+        color: var(--mono-900);
         line-height: 1.47059;
         letter-spacing: -0.015em;
         min-height: 100vh;
@@ -69,17 +76,16 @@
         -moz-osx-font-smoothing: grayscale;
       }
 
-      /* Apple Global Top Navigation Bar */
+      /* Apple Frosted Glass Top Navigation Bar */
       .apple-nav {
         position: sticky;
         top: 0;
         z-index: 99;
         width: 100%;
-        background: rgba(255, 255, 255, 0.82);
+        background: rgba(255, 255, 255, 0.85);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
-        border-bottom: 1px solid var(--apple-border);
-        transition: background-color 0.3s ease;
+        border-bottom: 1px solid var(--mono-border);
       }
 
       .nav-container {
@@ -97,14 +103,14 @@
         align-items: center;
         gap: 8px;
         text-decoration: none;
-        color: var(--apple-text-primary);
+        color: var(--mono-black);
         font-weight: 600;
         font-size: 0.95rem;
         letter-spacing: -0.02em;
       }
 
       .nav-brand svg {
-        color: var(--apple-blue);
+        color: var(--mono-black);
       }
 
       .nav-meta {
@@ -115,22 +121,22 @@
 
       .nav-date {
         font-size: 0.82rem;
-        color: var(--apple-text-secondary);
+        color: var(--mono-600);
         font-weight: 500;
         letter-spacing: -0.01em;
       }
 
       .nav-sync-tag {
         font-size: 0.74rem;
-        color: var(--apple-text-tertiary);
-        background: rgba(0, 0, 0, 0.04);
+        color: var(--mono-500);
+        background: var(--mono-100);
         padding: 3px 8px;
-        border-radius: var(--apple-radius-pill);
+        border-radius: var(--mono-radius-pill);
         display: inline-flex;
         align-items: center;
       }
 
-      /* Main Page Wrapper */
+      /* Main Page Content */
       .main-content {
         max-width: 860px;
         width: 100%;
@@ -142,7 +148,7 @@
         flex: 1;
       }
 
-      /* Hero Section - Apple Keynote typography style */
+      /* Hero Title Section */
       .hero-section {
         display: flex;
         flex-direction: column;
@@ -150,24 +156,24 @@
       }
 
       .hero-eyebrow {
-        font-size: 0.84rem;
+        font-size: 0.82rem;
         font-weight: 600;
-        color: var(--apple-blue);
-        letter-spacing: -0.01em;
+        color: var(--mono-500);
+        letter-spacing: 0.02em;
         text-transform: uppercase;
       }
 
       .hero-title {
         font-size: clamp(1.85rem, 3.5vw, 2.35rem);
         font-weight: 700;
-        color: var(--apple-text-primary);
+        color: var(--mono-black);
         letter-spacing: -0.035em;
         line-height: 1.16;
       }
 
       .hero-subtitle {
         font-size: 1.02rem;
-        color: var(--apple-text-secondary);
+        color: var(--mono-600);
         letter-spacing: -0.015em;
         font-weight: 400;
         max-width: 580px;
@@ -175,26 +181,26 @@
       }
 
       /* Storage Alert Banner */
-      .apple-alert {
+      .mono-alert {
         display: none;
-        background-color: #fff;
-        border: 1px solid rgba(255, 59, 48, 0.25);
-        color: var(--apple-red);
+        background-color: #ffffff;
+        border: 1px solid var(--mono-800);
+        color: var(--mono-900);
         padding: 14px 18px;
-        border-radius: var(--apple-radius-control);
+        border-radius: var(--mono-radius-control);
         font-size: 0.88rem;
         font-weight: 500;
         align-items: center;
         gap: 12px;
-        box-shadow: 0 4px 16px rgba(255, 59, 48, 0.08);
-        animation: appleFadeIn 0.3s var(--ease-apple);
+        box-shadow: var(--mono-shadow-ambient);
+        animation: monoFadeIn 0.3s var(--ease-apple);
       }
 
-      .apple-alert.active {
+      .mono-alert.active {
         display: flex;
       }
 
-      /* Apple KPI Overview Strip */
+      /* Apple KPI Overview Strip (Monochrome Grayscale) */
       .stats-strip {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -202,11 +208,11 @@
       }
 
       .stat-tile {
-        background: var(--apple-card);
-        border: 1px solid var(--apple-border-subtle);
-        border-radius: var(--apple-radius-card);
+        background: var(--mono-card);
+        border: 1px solid var(--mono-border-subtle);
+        border-radius: var(--mono-radius-card);
         padding: 18px 20px;
-        box-shadow: var(--apple-shadow-ambient);
+        box-shadow: var(--mono-shadow-ambient);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -222,38 +228,26 @@
       .stat-tile-label {
         font-size: 0.82rem;
         font-weight: 500;
-        color: var(--apple-text-secondary);
+        color: var(--mono-500);
         letter-spacing: -0.01em;
       }
 
       .stat-tile-value {
         font-size: 1.85rem;
         font-weight: 700;
-        color: var(--apple-text-primary);
+        color: var(--mono-black);
         font-variant-numeric: tabular-nums;
         letter-spacing: -0.03em;
         line-height: 1;
       }
 
-      .stat-tile.is-due-today .stat-tile-value {
-        color: var(--apple-orange);
-      }
-
-      .stat-tile.is-overdue .stat-tile-value {
-        color: var(--apple-red);
-      }
-
-      .stat-tile.is-completed .stat-tile-value {
-        color: var(--apple-green);
-      }
-
       /* Apple Card (Main Containers) */
-      .apple-card {
-        background: var(--apple-card);
-        border: 1px solid var(--apple-border-subtle);
-        border-radius: var(--apple-radius-card);
+      .mono-card {
+        background: var(--mono-card);
+        border: 1px solid var(--mono-border-subtle);
+        border-radius: var(--mono-radius-card);
         padding: 26px 28px;
-        box-shadow: var(--apple-shadow-ambient);
+        box-shadow: var(--mono-shadow-ambient);
       }
 
       .card-header-clean {
@@ -263,18 +257,18 @@
       .card-header-clean h2 {
         font-size: 1.18rem;
         font-weight: 600;
-        color: var(--apple-text-primary);
+        color: var(--mono-black);
         letter-spacing: -0.02em;
       }
 
       .card-header-clean p {
         font-size: 0.85rem;
-        color: var(--apple-text-secondary);
+        color: var(--mono-500);
         margin-top: 3px;
       }
 
       /* Task Creation Form */
-      .apple-form {
+      .mono-form {
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -289,56 +283,56 @@
       .form-label {
         font-size: 0.86rem;
         font-weight: 600;
-        color: var(--apple-text-primary);
+        color: var(--mono-900);
         letter-spacing: -0.01em;
       }
 
       .form-label .req {
-        color: var(--apple-blue);
+        color: var(--mono-700);
         margin-left: 2px;
       }
 
-      .apple-input-text {
+      .mono-input-text {
         width: 100%;
         height: 48px;
         padding: 0 16px;
         font-size: 0.96rem;
         font-family: inherit;
-        border: 1px solid rgba(0, 0, 0, 0.12);
-        border-radius: var(--apple-radius-control);
+        border: 1px solid var(--mono-border);
+        border-radius: var(--mono-radius-control);
         outline: none;
-        color: var(--apple-text-primary);
+        color: var(--mono-black);
         background-color: #ffffff;
-        transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+        transition: border-color 0.18s ease, box-shadow 0.18s ease;
       }
 
-      .apple-input-text::placeholder {
-        color: var(--apple-text-tertiary);
+      .mono-input-text::placeholder {
+        color: var(--mono-400);
       }
 
-      .apple-input-text:focus {
-        border-color: var(--apple-blue);
-        box-shadow: 0 0 0 3.5px var(--apple-blue-tint);
+      .mono-input-text:focus {
+        border-color: var(--mono-black);
+        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
       }
 
-      .apple-input-text.has-error {
-        border-color: var(--apple-red);
-        background-color: rgba(255, 59, 48, 0.02);
+      .mono-input-text.has-error {
+        border-color: var(--mono-black);
+        background-color: var(--mono-50);
       }
 
-      .apple-input-text.has-error:focus {
-        box-shadow: 0 0 0 3.5px var(--apple-red-tint);
+      .mono-input-text.has-error:focus {
+        box-shadow: 0 0 0 3.5px rgba(0, 0, 0, 0.15);
       }
 
       .field-error {
         display: none;
-        color: var(--apple-red);
+        color: var(--mono-800);
         font-size: 0.82rem;
         font-weight: 500;
         align-items: center;
         gap: 6px;
         margin-top: 2px;
-        animation: appleFadeIn 0.2s ease;
+        animation: monoFadeIn 0.2s ease;
       }
 
       .field-error.visible {
@@ -352,12 +346,12 @@
         gap: 20px;
       }
 
-      /* Apple Segmented Control for Priority */
-      .apple-segmented {
+      /* Apple Segmented Control for Priority (Pure Grayscale) */
+      .mono-segmented {
         display: flex;
-        background: #e8e8ed;
+        background: var(--mono-100);
         padding: 4px;
-        border-radius: var(--apple-radius-control);
+        border-radius: var(--mono-radius-control);
         gap: 3px;
         position: relative;
         height: 46px;
@@ -370,7 +364,7 @@
         border-radius: 9px;
         font-size: 0.86rem;
         font-weight: 500;
-        color: var(--apple-text-secondary);
+        color: var(--mono-600);
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -382,80 +376,81 @@
       }
 
       .segment-item:hover {
-        color: var(--apple-text-primary);
+        color: var(--mono-black);
       }
 
       .segment-item[data-selected="true"] {
         background: #ffffff;
-        color: var(--apple-text-primary);
+        color: var(--mono-black);
         font-weight: 600;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 0.5px 1px rgba(0, 0, 0, 0.04);
       }
 
-      .apple-dot {
+      /* Grayscale Priority Dots */
+      .mono-dot {
         width: 7px;
         height: 7px;
         border-radius: 50%;
         display: inline-block;
       }
 
-      .apple-dot.high { background-color: var(--apple-red); }
-      .apple-dot.medium { background-color: var(--apple-blue); }
-      .apple-dot.low { background-color: var(--apple-green); }
+      .mono-dot.high { background-color: var(--mono-black); }
+      .mono-dot.medium { background-color: var(--mono-600); }
+      .mono-dot.low { background-color: var(--mono-300); }
 
-      /* Apple Date Field with quick buttons */
+      /* Date Control */
       .date-control-group {
         display: flex;
         gap: 8px;
         height: 46px;
       }
 
-      .apple-input-date {
+      .mono-input-date {
         flex: 1;
         padding: 0 14px;
         font-size: 0.92rem;
         font-family: inherit;
-        border: 1px solid rgba(0, 0, 0, 0.12);
-        border-radius: var(--apple-radius-control);
+        border: 1px solid var(--mono-border);
+        border-radius: var(--mono-radius-control);
         outline: none;
-        color: var(--apple-text-primary);
+        color: var(--mono-black);
         background-color: #ffffff;
         transition: border-color 0.18s ease, box-shadow 0.18s ease;
       }
 
-      .apple-input-date:focus {
-        border-color: var(--apple-blue);
-        box-shadow: 0 0 0 3.5px var(--apple-blue-tint);
+      .mono-input-date:focus {
+        border-color: var(--mono-black);
+        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
       }
 
-      .apple-subtle-btn {
-        background: #e8e8ed;
+      .mono-subtle-btn {
+        background: var(--mono-100);
         border: none;
-        border-radius: var(--apple-radius-control);
+        border-radius: var(--mono-radius-control);
         padding: 0 14px;
         font-size: 0.84rem;
         font-weight: 500;
-        color: var(--apple-text-primary);
+        color: var(--mono-900);
         cursor: pointer;
         transition: background 0.15s ease, opacity 0.15s ease;
         white-space: nowrap;
         font-family: inherit;
       }
 
-      .apple-subtle-btn:hover {
-        background: #dedee3;
+      .mono-subtle-btn:hover {
+        background: var(--mono-200);
       }
 
-      .apple-subtle-btn:active {
+      .mono-subtle-btn:active {
         opacity: 0.7;
       }
 
-      /* Apple Primary CTA Button */
-      .apple-btn-primary {
-        background-color: var(--apple-blue);
+      /* Pure Black Primary CTA Button */
+      .mono-btn-primary {
+        background-color: var(--mono-black);
         color: #ffffff;
         border: none;
-        border-radius: var(--apple-radius-pill);
+        border-radius: var(--mono-radius-pill);
         height: 48px;
         padding: 0 24px;
         font-size: 0.96rem;
@@ -470,12 +465,12 @@
         align-self: flex-start;
       }
 
-      .apple-btn-primary:hover {
-        background-color: var(--apple-blue-hover);
+      .mono-btn-primary:hover {
+        background-color: var(--mono-accent-hover);
       }
 
-      .apple-btn-primary:active {
-        background-color: var(--apple-blue-active);
+      .mono-btn-primary:active {
+        background-color: var(--mono-accent-active);
         transform: scale(0.98);
       }
 
@@ -486,7 +481,7 @@
         gap: 16px;
       }
 
-      /* Filter & Sort Bar (Apple Segmented Style) */
+      /* Toolbar with Filter Tabs and Sorting */
       .toolbar-row {
         display: flex;
         flex-wrap: wrap;
@@ -496,21 +491,21 @@
         padding-bottom: 8px;
       }
 
-      .apple-filter-group {
+      .mono-filter-group {
         display: flex;
-        background: #e8e8ed;
+        background: var(--mono-100);
         padding: 3px;
-        border-radius: var(--apple-radius-control);
+        border-radius: var(--mono-radius-control);
         gap: 2px;
       }
 
-      .apple-filter-tab {
+      .mono-filter-tab {
         border: none;
         background: transparent;
         padding: 6px 14px;
         font-size: 0.84rem;
         font-weight: 500;
-        color: var(--apple-text-secondary);
+        color: var(--mono-600);
         border-radius: 9px;
         cursor: pointer;
         transition: all 0.18s var(--ease-apple);
@@ -520,25 +515,25 @@
         font-family: inherit;
       }
 
-      .apple-filter-tab:hover {
-        color: var(--apple-text-primary);
+      .mono-filter-tab:hover {
+        color: var(--mono-black);
       }
 
-      .apple-filter-tab.active {
+      .mono-filter-tab.active {
         background: #ffffff;
-        color: var(--apple-text-primary);
+        color: var(--mono-black);
         font-weight: 600;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 0.5px 1px rgba(0, 0, 0, 0.04);
       }
 
       .tab-badge {
         font-size: 0.72rem;
-        color: var(--apple-text-secondary);
+        color: var(--mono-500);
         font-variant-numeric: tabular-nums;
       }
 
-      .apple-filter-tab.active .tab-badge {
-        color: var(--apple-blue);
+      .mono-filter-tab.active .tab-badge {
+        color: var(--mono-black);
       }
 
       .sort-widget {
@@ -549,16 +544,16 @@
 
       .sort-label {
         font-size: 0.82rem;
-        color: var(--apple-text-secondary);
+        color: var(--mono-500);
         font-weight: 500;
       }
 
-      .apple-select {
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        border-radius: var(--apple-radius-control);
+      .mono-select {
+        border: 1px solid var(--mono-border);
+        border-radius: var(--mono-radius-control);
         padding: 6px 12px;
         font-size: 0.84rem;
-        color: var(--apple-text-primary);
+        color: var(--mono-black);
         background: #ffffff;
         outline: none;
         cursor: pointer;
@@ -566,8 +561,8 @@
         transition: border-color 0.15s ease;
       }
 
-      .apple-select:focus {
-        border-color: var(--apple-blue);
+      .mono-select:focus {
+        border-color: var(--mono-black);
       }
 
       /* Task Items */
@@ -579,33 +574,33 @@
       }
 
       .task-row {
-        background: var(--apple-card);
-        border: 1px solid var(--apple-border-subtle);
-        border-radius: var(--apple-radius-control);
+        background: var(--mono-card);
+        border: 1px solid var(--mono-border-subtle);
+        border-radius: var(--mono-radius-control);
         padding: 16px 20px;
         display: flex;
         align-items: center;
         gap: 16px;
-        box-shadow: var(--apple-shadow-ambient);
+        box-shadow: var(--mono-shadow-ambient);
         transition: transform 0.18s var(--ease-apple), box-shadow 0.18s var(--ease-apple), background-color 0.18s ease;
       }
 
       .task-row:hover {
-        background-color: var(--apple-card-hover);
+        background-color: var(--mono-card-hover);
         box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
       }
 
       .task-row.is-completed {
-        opacity: 0.65;
+        opacity: 0.55;
         background: #fbfbfc;
       }
 
-      /* Apple Checkbox (Smooth iOS style circle) */
-      .apple-checkbox {
+      /* Pure Black/Grey Checkbox */
+      .mono-checkbox {
         width: 22px;
         height: 22px;
         border-radius: 50%;
-        border: 2px solid #c7c7cc;
+        border: 2px solid var(--mono-300);
         background: transparent;
         display: flex;
         align-items: center;
@@ -615,23 +610,23 @@
         transition: all 0.2s var(--ease-apple);
       }
 
-      .apple-checkbox:hover {
-        border-color: var(--apple-blue);
+      .mono-checkbox:hover {
+        border-color: var(--mono-black);
       }
 
-      .apple-checkbox svg {
+      .mono-checkbox svg {
         display: none;
         stroke: #ffffff;
         transform: scale(0.6);
         transition: transform 0.2s var(--ease-apple-bounce);
       }
 
-      .task-row.is-completed .apple-checkbox {
-        background-color: var(--apple-blue);
-        border-color: var(--apple-blue);
+      .task-row.is-completed .mono-checkbox {
+        background-color: var(--mono-black);
+        border-color: var(--mono-black);
       }
 
-      .task-row.is-completed .apple-checkbox svg {
+      .task-row.is-completed .mono-checkbox svg {
         display: block;
         transform: scale(1);
       }
@@ -648,7 +643,7 @@
       .task-text {
         font-size: 0.98rem;
         font-weight: 500;
-        color: var(--apple-text-primary);
+        color: var(--mono-black);
         letter-spacing: -0.015em;
         word-break: break-word;
         transition: color 0.15s ease;
@@ -656,17 +651,17 @@
 
       .task-row.is-completed .task-text {
         text-decoration: line-through;
-        color: var(--apple-text-tertiary);
+        color: var(--mono-400);
       }
 
-      /* Apple Metadata styling (Clean unboxed typography with typographic separators) */
+      /* Apple Monochrome Metadata Line */
       .task-meta-line {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         gap: 8px;
         font-size: 0.8rem;
-        color: var(--apple-text-secondary);
+        color: var(--mono-600);
       }
 
       .meta-priority {
@@ -676,12 +671,12 @@
         font-weight: 500;
       }
 
-      .meta-priority.high { color: var(--apple-red); }
-      .meta-priority.medium { color: var(--apple-blue); }
-      .meta-priority.low { color: var(--apple-green); }
+      .meta-priority.high { color: var(--mono-black); font-weight: 600; }
+      .meta-priority.medium { color: var(--mono-700); }
+      .meta-priority.low { color: var(--mono-500); }
 
       .meta-sep {
-        color: #d1d1d6;
+        color: var(--mono-200);
         user-select: none;
       }
 
@@ -689,11 +684,11 @@
         display: inline-flex;
         align-items: center;
         gap: 4px;
-        color: var(--apple-text-secondary);
+        color: var(--mono-600);
         font-variant-numeric: tabular-nums;
       }
 
-      /* Apple Status Tags (Soft, elegant highlights) */
+      /* Monochrome Status Badges (Grey & Black Shades) */
       .meta-status {
         display: inline-flex;
         align-items: center;
@@ -701,29 +696,30 @@
         font-weight: 600;
         font-size: 0.78rem;
         padding: 2px 8px;
-        border-radius: var(--apple-radius-pill);
+        border-radius: var(--mono-radius-pill);
       }
 
       .meta-status.due-today {
-        background: var(--apple-orange-tint);
-        color: var(--apple-orange);
+        background: var(--mono-100);
+        color: var(--mono-900);
+        border: 1px solid var(--mono-200);
       }
 
       .meta-status.overdue {
-        background: var(--apple-red-tint);
-        color: var(--apple-red);
+        background: var(--mono-900);
+        color: #ffffff;
       }
 
       .meta-status.completed {
-        background: var(--apple-green-tint);
-        color: var(--apple-green);
+        background: var(--mono-100);
+        color: var(--mono-600);
       }
 
       /* Delete Button */
-      .apple-delete-btn {
+      .mono-delete-btn {
         background: transparent;
         border: none;
-        color: var(--apple-text-tertiary);
+        color: var(--mono-400);
         width: 34px;
         height: 34px;
         border-radius: 50%;
@@ -735,13 +731,13 @@
         flex-shrink: 0;
       }
 
-      .apple-delete-btn:hover {
-        background: rgba(255, 59, 48, 0.08);
-        color: var(--apple-red);
+      .mono-delete-btn:hover {
+        background: var(--mono-100);
+        color: var(--mono-black);
       }
 
-      /* Apple Empty State */
-      .apple-empty {
+      /* Empty State */
+      .mono-empty {
         display: none;
         flex-direction: column;
         align-items: center;
@@ -750,7 +746,7 @@
         text-align: center;
       }
 
-      .apple-empty.visible {
+      .mono-empty.visible {
         display: flex;
       }
 
@@ -758,8 +754,8 @@
         width: 56px;
         height: 56px;
         border-radius: 50%;
-        background: #e8e8ed;
-        color: var(--apple-text-secondary);
+        background: var(--mono-100);
+        color: var(--mono-600);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -769,33 +765,33 @@
       .empty-headline {
         font-size: 1.15rem;
         font-weight: 600;
-        color: var(--apple-text-primary);
+        color: var(--mono-black);
         letter-spacing: -0.02em;
         margin-bottom: 4px;
       }
 
       .empty-subtext {
         font-size: 0.9rem;
-        color: var(--apple-text-secondary);
+        color: var(--mono-500);
         max-width: 360px;
         line-height: 1.5;
       }
 
-      /* Apple Dynamic Toast HUD (Frosted Glass Pill) */
-      .apple-toast {
+      /* Toast HUD */
+      .mono-toast {
         position: fixed;
         bottom: 32px;
         left: 50%;
         transform: translateX(-50%) translateY(80px);
-        background: rgba(29, 29, 31, 0.92);
+        background: rgba(0, 0, 0, 0.92);
         backdrop-filter: blur(24px);
         -webkit-backdrop-filter: blur(24px);
         color: #ffffff;
         padding: 10px 22px;
-        border-radius: var(--apple-radius-pill);
+        border-radius: var(--mono-radius-pill);
         font-size: 0.88rem;
         font-weight: 500;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         display: flex;
         align-items: center;
         gap: 10px;
@@ -806,34 +802,35 @@
         letter-spacing: -0.01em;
       }
 
-      .apple-toast.visible {
+      .mono-toast.visible {
         transform: translateX(-50%) translateY(0);
         opacity: 1;
         pointer-events: auto;
       }
 
-      .apple-toast.is-error {
-        background: rgba(215, 0, 21, 0.95);
+      .mono-toast.is-error {
+        background: #1d1d1f;
+        border: 1px solid rgba(255, 255, 255, 0.2);
       }
 
-      /* Apple Footer */
-      .apple-footer {
+      /* Minimalist Footer */
+      .mono-footer {
         max-width: 980px;
         margin: 0 auto;
         padding: 24px 20px 40px 20px;
-        border-top: 1px solid var(--apple-border);
+        border-top: 1px solid var(--mono-border);
         font-size: 0.76rem;
-        color: var(--apple-text-tertiary);
+        color: var(--mono-500);
         line-height: 1.5;
         text-align: center;
       }
 
-      @keyframes appleFadeIn {
+      @keyframes monoFadeIn {
         from { opacity: 0; transform: translateY(-4px); }
         to { opacity: 1; transform: translateY(0); }
       }
 
-      /* Mobile Responsiveness */
+      /* Mobile */
       @media (max-width: 640px) {
         .main-content {
           padding: 20px 14px 40px 14px;
@@ -855,7 +852,7 @@
           grid-template-columns: 1fr;
         }
 
-        .apple-card {
+        .mono-card {
           padding: 20px 18px;
         }
 
@@ -864,12 +861,12 @@
           align-items: stretch;
         }
 
-        .apple-filter-group {
+        .mono-filter-group {
           width: 100%;
           overflow-x: auto;
         }
 
-        .apple-filter-tab {
+        .mono-filter-tab {
           padding: 6px 10px;
           font-size: 0.8rem;
         }
@@ -881,7 +878,7 @@
     </style>
   </head>
   <body>
-    <!-- Apple-style Navigation Bar with Frosted Glass Blur -->
+    <!-- Top Navigation Bar -->
     <header class="apple-nav">
       <div class="nav-container">
         <a href="#" class="nav-brand" aria-label="내 업무 플래너 홈">
@@ -901,7 +898,7 @@
 
     <main class="main-content">
       <!-- Storage Alert Banner -->
-      <div id="storageAlert" class="apple-alert" role="alert">
+      <div id="storageAlert" class="mono-alert" role="alert">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10"></circle>
           <line x1="12" y1="8" x2="12" y2="12"></line>
@@ -917,7 +914,7 @@
         <p class="hero-subtitle">마감일과 우선순위, 완료 상태를 한눈에 파악할 수 있는 개인 업무 플래너입니다.</p>
       </section>
 
-      <!-- Apple KPI Overview Strip -->
+      <!-- KPI Overview Strip (Monochrome Grayscale) -->
       <section class="stats-strip" aria-label="업무 현황 요약">
         <div class="stat-tile">
           <span class="stat-tile-label">전체 업무</span>
@@ -927,23 +924,23 @@
           <span class="stat-tile-label">진행 중</span>
           <span class="stat-tile-value" id="statPending">0</span>
         </div>
-        <div class="stat-tile is-due-today">
+        <div class="stat-tile">
           <span class="stat-tile-label">오늘 마감</span>
           <span class="stat-tile-value" id="statDueToday">0</span>
         </div>
-        <div class="stat-tile is-overdue">
+        <div class="stat-tile">
           <span class="stat-tile-label">기한 지남</span>
           <span class="stat-tile-value" id="statOverdue">0</span>
         </div>
       </section>
 
-      <!-- Apple Input Card -->
-      <section class="apple-card" aria-labelledby="formHeading">
+      <!-- Input Card -->
+      <section class="mono-card" aria-labelledby="formHeading">
         <div class="card-header-clean">
           <h2 id="formHeading">새 업무 등록</h2>
           <p>등록된 업무는 브라우저 로컬 저장소에 즉시 보관됩니다.</p>
         </div>
-        <form id="taskForm" class="apple-form" novalidate>
+        <form id="taskForm" class="mono-form" novalidate>
           <!-- Task Title Input -->
           <div class="form-field">
             <label for="taskTitle" class="form-label">
@@ -952,7 +949,7 @@
             <input
               type="text"
               id="taskTitle"
-              class="apple-input-text"
+              class="mono-input-text"
               placeholder="업무명을 입력하세요 (예: 2분기 사업 계획서 작성)"
               autocomplete="off"
               maxlength="200"
@@ -969,10 +966,10 @@
 
           <!-- Priority & Due Date Row -->
           <div class="form-split-row">
-            <!-- Apple Priority Segmented Control -->
+            <!-- Priority Segmented Control (Grayscale) -->
             <div class="form-field">
               <label id="priorityLabel" class="form-label">우선순위</label>
-              <div class="apple-segmented" role="radiogroup" aria-labelledby="priorityLabel">
+              <div class="mono-segmented" role="radiogroup" aria-labelledby="priorityLabel">
                 <button
                   type="button"
                   class="segment-item"
@@ -980,7 +977,7 @@
                   role="radio"
                   aria-checked="false"
                 >
-                  <span class="apple-dot high"></span>
+                  <span class="mono-dot high"></span>
                   높음
                 </button>
                 <button
@@ -991,7 +988,7 @@
                   aria-checked="true"
                   data-selected="true"
                 >
-                  <span class="apple-dot medium"></span>
+                  <span class="mono-dot medium"></span>
                   보통
                 </button>
                 <button
@@ -1001,7 +998,7 @@
                   role="radio"
                   aria-checked="false"
                 >
-                  <span class="apple-dot low"></span>
+                  <span class="mono-dot low"></span>
                   낮음
                 </button>
               </div>
@@ -1014,16 +1011,16 @@
                 <input
                   type="date"
                   id="taskDueDate"
-                  class="apple-input-date"
+                  class="mono-input-date"
                 />
-                <button type="button" id="btnDateToday" class="apple-subtle-btn" title="오늘 날짜 입력">오늘</button>
-                <button type="button" id="btnDateClear" class="apple-subtle-btn" title="날짜 지우기">삭제</button>
+                <button type="button" id="btnDateToday" class="mono-subtle-btn" title="오늘 날짜 입력">오늘</button>
+                <button type="button" id="btnDateClear" class="mono-subtle-btn" title="날짜 지우기">삭제</button>
               </div>
             </div>
           </div>
 
-          <!-- Submit Button -->
-          <button type="submit" id="btnSubmit" class="apple-btn-primary">
+          <!-- Submit Button (Pure Black) -->
+          <button type="submit" id="btnSubmit" class="mono-btn-primary">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <line x1="12" y1="5" x2="12" y2="19"></line>
               <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -1037,24 +1034,24 @@
       <section class="list-container" aria-labelledby="listHeading">
         <!-- Toolbar with Filter Tabs and Sorting -->
         <div class="toolbar-row">
-          <div class="apple-filter-group" role="tablist" aria-label="업무 목록 필터">
-            <button class="apple-filter-tab active" data-filter="all" role="tab" aria-selected="true">
+          <div class="mono-filter-group" role="tablist" aria-label="업무 목록 필터">
+            <button class="mono-filter-tab active" data-filter="all" role="tab" aria-selected="true">
               전체 <span class="tab-badge" id="countAll">0</span>
             </button>
-            <button class="apple-filter-tab" data-filter="active" role="tab" aria-selected="false">
+            <button class="mono-filter-tab" data-filter="active" role="tab" aria-selected="false">
               진행 중 <span class="tab-badge" id="countActive">0</span>
             </button>
-            <button class="apple-filter-tab" data-filter="overdue" role="tab" aria-selected="false">
+            <button class="mono-filter-tab" data-filter="overdue" role="tab" aria-selected="false">
               기한 지남 <span class="tab-badge" id="countOverdue">0</span>
             </button>
-            <button class="apple-filter-tab" data-filter="completed" role="tab" aria-selected="false">
+            <button class="mono-filter-tab" data-filter="completed" role="tab" aria-selected="false">
               완료됨 <span class="tab-badge" id="countCompleted">0</span>
             </button>
           </div>
 
           <div class="sort-widget">
             <label for="sortSelect" class="sort-label">정렬</label>
-            <select id="sortSelect" class="apple-select">
+            <select id="sortSelect" class="mono-select">
               <option value="createdAt-desc">최신 등록순</option>
               <option value="dueDate-asc">마감일 빠른순</option>
               <option value="priority-desc">우선순위 높은순</option>
@@ -1066,8 +1063,8 @@
         <!-- Task List Items -->
         <ul id="taskList" class="task-list" aria-live="polite"></ul>
 
-        <!-- Apple Empty State -->
-        <div id="emptyState" class="apple-empty">
+        <!-- Empty State -->
+        <div id="emptyState" class="mono-empty">
           <div class="empty-sf-icon" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -1083,13 +1080,13 @@
       </section>
     </main>
 
-    <!-- Apple Minimalist Footer -->
-    <footer class="apple-footer">
+    <!-- Minimalist Footer -->
+    <footer class="mono-footer">
       <p>내 업무 플래너 • 이 브라우저에 저장되며 다른 기기와 자동 동기화되지 않습니다.</p>
     </footer>
 
-    <!-- Apple Dynamic Island Style Floating Toast HUD -->
-    <div id="toast" class="apple-toast" role="status" aria-live="assertive">
+    <!-- Toast HUD -->
+    <div id="toast" class="mono-toast" role="status" aria-live="assertive">
       <span id="toastMessage">업무가 등록되었습니다.</span>
     </div>
 
@@ -1119,7 +1116,7 @@
         const storageAlert = document.getElementById('storageAlert');
         const storageAlertText = document.getElementById('storageAlertText');
         const sortSelect = document.getElementById('sortSelect');
-        const filterTabs = document.querySelectorAll('.apple-filter-tab');
+        const filterTabs = document.querySelectorAll('.mono-filter-tab');
         const toastEl = document.getElementById('toast');
         const toastMessageEl = document.getElementById('toastMessage');
         const btnDateToday = document.getElementById('btnDateToday');
@@ -1150,7 +1147,7 @@
         }
 
         /**
-         * Update Apple Header Date in Korean
+         * Update Header Date in Korean
          */
         function updateHeaderDate() {
           const now = new Date();
@@ -1163,7 +1160,7 @@
         }
 
         /**
-         * Show Apple Dynamic Toast HUD
+         * Show Toast HUD
          */
         function showToast(message, isError = false) {
           if (toastTimeout) clearTimeout(toastTimeout);
@@ -1343,7 +1340,7 @@
         }
 
         /**
-         * Render Task List with Apple Aesthetic
+         * Render Task List with Monochrome Aesthetic
          */
         function renderTasks() {
           updateStats();
@@ -1359,7 +1356,7 @@
             } else {
               emptyTitleEl.textContent = '해당하는 업무가 없습니다';
               if (currentFilter === 'overdue') {
-                emptyDescEl.textContent = '기한이 지난 미완료 업무가 없습니다. 훌륭합니다!';
+                emptyDescEl.textContent = '기한이 지난 미완료 업무가 없습니다.';
               } else if (currentFilter === 'completed') {
                 emptyDescEl.textContent = '완료된 업무가 아직 없습니다.';
               } else if (currentFilter === 'active') {
@@ -1382,20 +1379,20 @@
             const priorityTextMap = { high: '높음', medium: '보통', low: '낮음' };
             const priorityLabel = priorityTextMap[task.priority] || '보통';
 
-            // Status tag
+            // Monochrome Status Tag
             let statusTagHtml = '';
             if (task.completed) {
               statusTagHtml = `<span class="meta-sep" aria-hidden="true">·</span><span class="meta-status completed">✓ 완료됨</span>`;
             } else if (status === 'today') {
-              statusTagHtml = `<span class="meta-sep" aria-hidden="true">·</span><span class="meta-status due-today">⏰ 오늘 마감</span>`;
+              statusTagHtml = `<span class="meta-sep" aria-hidden="true">·</span><span class="meta-status due-today">오늘 마감</span>`;
             } else if (status === 'overdue') {
-              statusTagHtml = `<span class="meta-sep" aria-hidden="true">·</span><span class="meta-status overdue">⚠️ 기한 지남</span>`;
+              statusTagHtml = `<span class="meta-sep" aria-hidden="true">·</span><span class="meta-status overdue">기한 지남</span>`;
             }
 
             const dueDateText = formatDueDateDisplay(task.dueDate);
 
             li.innerHTML = `
-              <div class="apple-checkbox" role="checkbox" aria-checked="${task.completed ? 'true' : 'false'}" tabindex="0" title="${task.completed ? '완료 해제' : '완료 체크'}">
+              <div class="mono-checkbox" role="checkbox" aria-checked="${task.completed ? 'true' : 'false'}" tabindex="0" title="${task.completed ? '완료 해제' : '완료 체크'}">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
@@ -1404,7 +1401,7 @@
                 <div class="task-text">${escapeHtml(task.title)}</div>
                 <div class="task-meta-line">
                   <span class="meta-priority ${escapeHtml(task.priority)}">
-                    <span class="apple-dot ${escapeHtml(task.priority)}"></span>
+                    <span class="mono-dot ${escapeHtml(task.priority)}"></span>
                     우선순위: ${priorityLabel}
                   </span>
                   <span class="meta-sep" aria-hidden="true">·</span>
@@ -1420,7 +1417,7 @@
                   ${statusTagHtml}
                 </div>
               </div>
-              <button type="button" class="apple-delete-btn" title="업무 삭제" aria-label="${escapeHtml(task.title)} 업무 삭제">
+              <button type="button" class="mono-delete-btn" title="업무 삭제" aria-label="${escapeHtml(task.title)} 업무 삭제">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="3 6 5 6 21 6"></polyline>
                   <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
@@ -1429,7 +1426,7 @@
             `;
 
             // Toggle completion
-            const checkboxEl = li.querySelector('.apple-checkbox');
+            const checkboxEl = li.querySelector('.mono-checkbox');
             const toggle = () => toggleTaskCompletion(task.id);
             checkboxEl.addEventListener('click', toggle);
             checkboxEl.addEventListener('keydown', (e) => {
@@ -1440,7 +1437,7 @@
             });
 
             // Delete task
-            const deleteBtn = li.querySelector('.apple-delete-btn');
+            const deleteBtn = li.querySelector('.mono-delete-btn');
             deleteBtn.addEventListener('click', (e) => {
               e.stopPropagation();
               deleteTask(task.id);
